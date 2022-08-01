@@ -1,5 +1,6 @@
 <?php
 
+use yii\rest\UrlRule;
 use yii\web\JsonParser;
 
 $params = array_merge(
@@ -47,6 +48,11 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                // mempercantik url di REST
+                [
+                    'class'=> UrlRule::class,
+                    'controller' => 'post'
+                ]
             ],
         ],
         
