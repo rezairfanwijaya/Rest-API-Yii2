@@ -19,7 +19,19 @@ class Post extends \common\models\Post
     // http://yii2-blog-api.test/post?expand=created_at,created_by
     public function extraFields()
     {
-        return ['created_by', 'created_at', 'updated_at'];
+        return ['created_by', 'created_at', 'updated_at', 'comments'];
+    }
+
+    
+    // karena post ini memiliki relasi ke comment, dan comment akan ditampilkan di post maka kita harus override function getComment pada file common/models/post
+     /**
+     * Gets query for [[Comments]].
+     *
+     * @return \yii\db\ActiveQuery|\common\models\query\CommentQuery
+     */
+    public function getComments()
+    {
+        return $this->hasMany(Comment::class, ['post_id' => 'id']);
     }
 }
 
