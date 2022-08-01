@@ -51,7 +51,7 @@ return [
                 // mempercantik url di REST
                 [
                     'class'=> UrlRule::class,
-                    'controller' => 'post'
+                    'controller' => ['post', 'comment']
                 ]
             ],
         ],
