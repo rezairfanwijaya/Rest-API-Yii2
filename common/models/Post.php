@@ -33,6 +33,7 @@ class Post extends \yii\db\ActiveRecord
     public function behaviors()
     {
         return [
+            // untuk menampilkan created_at, updated_at
             TimestampBehavior::class,
             [
                 'class' => BlameableBehavior::class,
