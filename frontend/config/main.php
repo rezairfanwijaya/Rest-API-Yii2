@@ -52,6 +52,10 @@ return [
                 [
                     'class'=> UrlRule::class,
                     'controller' => ['post', 'comment']
+                ],
+                [
+                    'pattern' => 'post/<postId:\d+>/comments', // ini custom url
+                    'route' => 'comment/index' // ini sumber url 
                 ]
             ],
         ],
